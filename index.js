@@ -147,8 +147,8 @@ class WindowsBox {
         // 怎么配置参数
         // 怎么绑定事件
         // 暂时支持简单的参数（width，height，frame, transform等）
-        // 判断参数是否有name和refresh属性（如果有name属性查找该name窗口是否存在，存在显示不存在新建）
-        option = option || {}
+        // 判断参数是否有name和refresh属性（如果有name属性查找该name窗口是否存在，存在显示不存在新建） 
+        option = option ? JSON.parse(option) : {}
         let freeWindow, freeWindowInfo
         if (option.name) {
             let winInfo = this._windowList.find(row => row.name === option.name)
